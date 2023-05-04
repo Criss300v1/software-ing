@@ -8,7 +8,9 @@ body {
 	box-shadow: 0px 0px 10px #CCCCCC;
 	margin: 0 auto;
 	padding: 20px;
-	width: 400px;
+	width: 300px;
+	margin-top: 10%;
+	
 }
 
 h1 {
@@ -23,8 +25,9 @@ label {
 	color: #333333;
 	display: block;
 	font-family: Arial, sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	margin-bottom: 10px;
+	margin-top: 5px;
 }
 
 input[type="text"], input[type="password"] {
@@ -33,7 +36,7 @@ input[type="text"], input[type="password"] {
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 	padding: 10px;
-	width: 100%;
+	width: 92%;
 }
 
 button[type="submit"] {
