@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>pruebas backup</title>
     <link rel="stylesheet" href="indice.css">
+    <link rel="stylesheet" type="text/css" href="insertar.css">
   </head>
   <body>
     <header>
@@ -17,8 +18,18 @@
       </nav>
     </header>
     <main>
-      <h2>Contenido principal</h2>
-      <p>Este es el contenido principal de la página.</p>
+      <div>
+        <h1>Insertar imágenes</h1>
+        <form action="guardado_img.php" method="post" enctype="multipart/form-data">
+          <label for="imagen">Selecciona una imagen:</label>
+          <input type="file" name="imagen" id="imagen">
+      
+          <label for="descripcion">Descripción:</label>
+          <textarea name="descripcion" id="descripcion"></textarea>
+      
+          <input type="submit" value="Insertar imagen">
+        </form>
+      </div>
     </main>
     <footer>
       <p>Derechos de autor © 2021. Todos los derechos reservados prueba.</p>
