@@ -9,15 +9,4 @@ $conexion = mysqli_connect("localhost","root","","software-ing");
 
 		$contenido_imagen = file_get_contents($imagen);
 
-		$descripcion = $_POST['descripcion'];
-
-		$sql = "INSERT INTO imagenes (nombre, tipo, tamaño, imagen, descripcion) 
-				VALUES ('$nombre_imagen', '$tipo_imagen', '$tamaño_imagen', '$contenido_imagen', '$descripcion')";
-
-		if(mysqli_query($conexion, $sql)) {
-			echo "La imagen se ha guardado correctamente en la base de datos.";
-		} else {
-			echo "Error al guardar la imagen en la base de datos: " . mysqli_error($conexion);
-		}
-	}
 ?>
