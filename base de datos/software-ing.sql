@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2023 a las 08:00:50
+-- Tiempo de generación: 10-05-2023 a las 18:35:52
 -- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.0.25
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,12 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `imagenes` (
-  `id` int(6) UNSIGNED NOT NULL,
+  `id` int(6) NOT NULL,
   `id_imagenes` int(6) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
   `imagen` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `imagenes`
+--
+
+INSERT INTO `imagenes` (`id`, `id_imagenes`, `nombre`, `descripcion`, `imagen`) VALUES
+(1, 1, 'sanandres', 'gdgdg', 0x696d6167652f706e67);
 
 -- --------------------------------------------------------
 
@@ -44,16 +51,15 @@ CREATE TABLE `imagenes` (
 CREATE TABLE `usuarios` (
   `id` int(6) NOT NULL,
   `usuario` varchar(40) NOT NULL,
-  `contraseña` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `contraseña` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
-(6, 'admin', 123),
-(7, 'admin2', 123);
+(1, 'admin', '123');
 
 --
 -- Índices para tablas volcadas
@@ -64,7 +70,7 @@ INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
 --
 ALTER TABLE `imagenes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_usuariosid` (`id_imagenes`);
+  ADD KEY `id_imagenes` (`id_imagenes`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -80,13 +86,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -96,7 +96,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  ADD CONSTRAINT `fk_usuariosid` FOREIGN KEY (`id_imagenes`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`id_imagenes`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
