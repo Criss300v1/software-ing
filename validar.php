@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../software-ing/css/validar.css">
 <?php
 // Conexión a la base de datos
 $conexion = mysqli_connect("localhost","root","","software-ing");
@@ -20,11 +21,13 @@ if (mysqli_num_rows($resultado) == 1) {
 	header("Location: indice.html");
 } 
 else {
+	error_reporting(0)
 	?>
 	<?php
 	include("index.php")
 	?>
-	<h1 class="bad">ERROR EN LA AUTENTICACION</h1>
+	<br>
+	<h1 class="bad">*ERROR EN LA AUTENTICACION*</h1>
 	<?php
 
 }
