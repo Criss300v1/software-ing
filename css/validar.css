@@ -1,0 +1,12 @@
+.bad{
+    color: #721c24; 
+    background-color: #f8d7da; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 4px; 
+    padding: 12px 20px; 
+    margin-bottom: 20px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    text-shadow: 1px 1px #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
