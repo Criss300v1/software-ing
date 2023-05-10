@@ -21,7 +21,6 @@ header {
     text-decoration: none;
   }
   
-  /* Estilos para el contenido principal */
   main {
     max-width: 800px;
     margin: 0 auto;
@@ -34,7 +33,6 @@ header {
     line-height: 1.5;
   }
   
-  /* Estilos para el pie de página */
   footer {
     background-color: #eee;
     padding: 10px;
