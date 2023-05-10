@@ -3,43 +3,69 @@
   <head>
     <meta charset="UTF-8">
     <title>pruebas backup</title>
+    <link rel="stylesheet" href="styles.scss">
     <link rel="stylesheet" href="../software-ing/css/indice.css">
     <link rel="stylesheet" type="text/css" href="../software-ing/css/insertar.css">
   </head>
   <body>
     <header>
-      <h1>Galeria De Imagenes "BACKUPS"</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">prueba</a></li>
-          <li><a href="#">prueba</a></li>
-        </ul>
+      <h1>Galeria De Imagenes "BACKUPS"</h1><br>
+      <nav class="navbar navbar-expand-lg navbar-danger bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="indice.html#">Mi Insertar Backups</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Perfil
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Producto 1</a></li>
+                  <li><a class="dropdown-item" href="#">Producto 2</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Producto 3</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
     <main>
       <div>
         <h1>Inserte imágenes De sus Backups </h1>
         <form action="guardado_img.php" method="post" enctype="multipart/form-data">
+          <div class="row g-3">
+            <div class="col">
+               <label class="form-control"for="nombre">*Ingrese Su Identificacion*</label>
+                <input type="texto" placeholder="Ingrese La Numeracion De su ID." class="form-control" name="id" id="id"><br>
+            </div>
+          </div>
 
-          <label for="nombre">ingrese una id</label>
-          <input type="texto" name="id" id="id">
-
-          <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre">
-
-          <label for="imagen">Selecciona una imagen:</label>
-          <input type="file" name="imagen" id="imagen">
-      
-          <label for="descripcion">Descripción:</label>
-          <textarea name="descripcion" id="descripcion"></textarea>
-      
-          <input type="submit" value="Insertar imagen">
+          <div class="row g-3">
+            <div class="col">
+             <label class="form-control" for="nombre">*Ingrese El Nombre De Su Imagen*</label>
+              <input type="text" placeholder="Ingrese Aqui El Nombre De Su Imagen" class="form-control" name="nombre" id="nombre"><br>
+               <label class="form-control" for="imagen">*Seleccione Su Imagen*:</label>
+                <input type="file" class="form-control" name="imagen" id="imagen"><br>
+                 <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion"></textarea>
+            </div>
+          </div class="boton">
+          <input type="submit"value="Insertar imagen">
         </form>
       </div>
     </main>
     <footer>
       <p>Derechos de autor © 2021. Todos los derechos reservados prueba.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-4f4c2g1IzW8+oY34HhYF6Q2Jg7h/6oH/+sSSsUiEgGJz7Np6Y/hC0Yvo1fqbXuL7" crossorigin="anonymous"></script>
   </body>
 </html>
