@@ -8,6 +8,7 @@
     $descripcion = $_POST['descripcion'];
     $tipo = $_FILES['imagen']['type'];
     $datos = file_get_contents($_FILES['imagen']['tmp_name']);
+    $remember = isset($_POST["remember"]);
     
 
     $query = "INSERT INTO imagenes (nombre, descripcion, imagen) VALUES (?, ?, ?)";
