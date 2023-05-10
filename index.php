@@ -6,7 +6,7 @@ $conexion=conexion();
 <html>
 <head>
 	<title>Iniciar sesión</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="../software-ing/css/styles.css">
 </head>
 <body>
 	<div class="formulario">
