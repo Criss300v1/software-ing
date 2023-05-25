@@ -21,6 +21,10 @@
                     if (isset($_REQUEST['guardar'])) {
                            if(isset($_FILES['imagen']['name'])){
                             $tipoArchivo = $_FILES['imagen']['type'];
+                            $permitido = array("image/png","image/jpeg");
+                            if( in_array($tipoArchivo,$permitido) == false ){
+                              die("Archivo No permitido");
+                            }
                             $nombreArchivo = $_FILES['imagen']['name'];
                             $tamanoArchivo = $_FILES['imagen']['size'];
                             $imagenSubida = fopen($_FILES['imagen']['tmp_name'],'r');
